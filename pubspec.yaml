@@ -52,6 +52,9 @@ dependencies:
   #http package dependencies
   http: ^0.13.4
 
+  # stripe dependency
+  flutter_stripe: ^2.0.2
+
   # velocityX
   velocity_x: ^3.3.0
 

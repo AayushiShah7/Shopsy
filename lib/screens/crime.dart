@@ -83,7 +83,7 @@ class Crime extends StatelessWidget {
                                     flex: 1,
                                     child: Container(
                                       padding: EdgeInsets.all(8.0),
-                                      height: 130.0,
+                                      height: 140.0,
                                       width: 130.0,
                                       decoration: BoxDecoration(
                                           borderRadius:
@@ -99,7 +99,7 @@ class Crime extends StatelessWidget {
                                     ),
                                   ),
                                   Expanded(
-                                    flex: 1,
+                                    flex: 2,
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -107,13 +107,13 @@ class Crime extends StatelessWidget {
                                         Row(
                                           children: [
                                             Container(
-                                              alignment: Alignment.topLeft,
+                                              alignment: Alignment.centerLeft,
                                               margin: EdgeInsets.only(
                                                   right: 10.0,
                                                   left: 5.0,
                                                   top: 5.0),
                                               height: 50.0,
-                                              width: 170.0,
+                                              width: 230.0,
                                               child: Text(
                                                 "${document['name']}",
                                                 style:
@@ -124,9 +124,27 @@ class Crime extends StatelessWidget {
                                         ),
                                         Container(
                                           margin: EdgeInsets.only(
+                                            top: 4.0,
+                                            left: 5.0,
+                                          ),
+                                          height: 30.0,
+                                          // color: Colors.red,
+                                          alignment: Alignment.centerLeft,
+                                          child: Text(
+                                            document['author'],
+                                            style: TextStyle(
+                                              fontSize: 17.0,
+                                              fontWeight: FontWeight.w600,
+                                              color:
+                                                  Colors.black.withOpacity(0.6),
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
                                             right: 10.0,
                                             left: 5.0,
-                                            top: 10.0,
+                                            top: 5.0,
                                           ),
                                           height: 30.0,
                                           width: 250.0,
@@ -178,7 +196,5 @@ class Crime extends StatelessWidget {
         ],
       ),
     );
-
-    //
   }
 }

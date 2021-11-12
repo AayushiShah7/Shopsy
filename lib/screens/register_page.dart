@@ -78,6 +78,8 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 CustomInput(
                   // showIcon: Icon(Icons.email),
+                  // fieldType: "first name",
+
                   showText: " First Name ",
                   pwdField: false,
                   onChange: (value) {
@@ -89,6 +91,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textInputAction: TextInputAction.next,
                 ),
                 CustomInput(
+                  // fieldType: "last name",
                   // showIcon: Icon(Icons.email),
                   showText: " Last Name ",
                   pwdField: false,
@@ -103,6 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textInputAction: TextInputAction.next,
                 ),
                 CustomInput(
+                  // fieldType: "gender",
                   // showIcon: Icon(Icons.email),
                   showText: " Gender ",
                   pwdField: false,
@@ -117,6 +121,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textInputAction: TextInputAction.next,
                 ),
                 CustomInput(
+                  // fieldType: "age",
                   // showIcon: Icon(Icons.email),
                   showText: " Age ",
                   pwdField: false,
@@ -131,6 +136,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textInputAction: TextInputAction.next,
                 ),
                 CustomInput(
+                  // fieldType: "mobile number",
                   // showIcon: Icon(Icons.email),
                   showText: " Mobile Number ",
                   pwdField: false,
@@ -145,6 +151,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textInputAction: TextInputAction.next,
                 ),
                 CustomInput(
+                  // fieldType: "email",
                   // showIcon: Icon(Icons.email),
                   showText: " Email ",
                   pwdField: false,
@@ -158,6 +165,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textInputAction: TextInputAction.next,
                 ),
                 CustomInput(
+                  // fieldType: "password",
                   // showIcon: Icon(Icons.visibility),
                   textInputAction: TextInputAction.next,
 
@@ -173,6 +181,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                 ),
                 CustomInput(
+                  // fieldType: "confirm password",
                   // showIcon: Icon(Icons.email),
                   showText: " Confirm Password ",
                   pwdField: true,

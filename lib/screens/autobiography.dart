@@ -6,14 +6,7 @@ import 'package:shopsy/model/user_model.dart';
 import 'package:shopsy/screens/product_page.dart';
 import 'package:shopsy/shared/constants.dart';
 
-class Romantic extends StatefulWidget {
-  Romantic({Key? key}) : super(key: key);
-
-  @override
-  State<Romantic> createState() => _RomanticState();
-}
-
-class _RomanticState extends State<Romantic> {
+class Autobiography extends StatelessWidget {
   CollectionReference<Map<String, dynamic>> _productRef =
       FirebaseFirestore.instance.collection("Products");
 
@@ -24,14 +17,18 @@ class _RomanticState extends State<Romantic> {
 
   User? _user = FirebaseAuth.instance.currentUser;
 
+  Autobiography({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           FutureBuilder<QuerySnapshot>(
-              future:
-                  _productRef.doc("Categories").collection("Romantic").get(),
+              future: _productRef
+                  .doc("Categories")
+                  .collection("Autobiography")
+                  .get(),
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
                   return Center(
@@ -56,7 +53,7 @@ class _RomanticState extends State<Romantic> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => ProductPage(
-                                      categoryRef: "Romantic",
+                                      categoryRef: "Autobiography",
                                       productid: document.id,
                                       isBookmark: false),
                                 ),
@@ -193,7 +190,7 @@ class _RomanticState extends State<Romantic> {
               hasBackGround: true,
               hasEditAction: false,
               hasTitle: true,
-              title: "Romantic",
+              title: "Autobiography",
               isLoading: false,
             ),
           )
@@ -202,3 +199,5 @@ class _RomanticState extends State<Romantic> {
     );
   }
 }
+
+class _productRef {}

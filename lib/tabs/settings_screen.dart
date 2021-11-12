@@ -9,6 +9,7 @@ import 'package:shopsy/model/user_model.dart';
 import 'package:shopsy/screens/cart_page.dart';
 import 'package:shopsy/screens/edit_profile_page.dart';
 import 'package:shopsy/screens/home_page.dart';
+import 'package:shopsy/screens/my_orders.dart';
 import 'package:shopsy/shared/constants.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -193,7 +194,46 @@ class SettingsScreen extends StatelessWidget {
                                     "My Cart",
                                     style: Constants.regularText,
                                   ),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
                                   Icon(Icons.shopping_cart_outlined),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                            width: 5.0,
+                            child: Divider(
+                              thickness: 2.0,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 0.0, bottom: 10.0),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MyOrders(),
+                                  ),
+                                );
+                              },
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "My Orders",
+                                    style: Constants.regularText,
+                                  ),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Image.asset(
+                                    'assets/images/order.png',
+                                    height: 25.0,
+                                    width: 25.0,
+                                  )
                                 ],
                               ),
                             ),
@@ -216,6 +256,9 @@ class SettingsScreen extends StatelessWidget {
                                   Text(
                                     "Sign Out",
                                     style: Constants.regularText,
+                                  ),
+                                  SizedBox(
+                                    width: 10.0,
                                   ),
                                   Icon(Icons.logout),
                                 ],

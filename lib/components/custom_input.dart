@@ -8,11 +8,21 @@ class CustomInput extends StatefulWidget {
   final FocusNode? focusNode;
   final TextInputAction? textInputAction;
   final bool? isMobileNumberField;
+  // final String fieldType;
+  // final String? pwd;
+  // final String? cfmpwd;
+  // final value;
+  // final Function(dynamic)? validate;
   // var showIcon;
   bool pwdField;
 
   CustomInput(
       {Key? key,
+      // required this.fieldType,
+      // required this.value,
+      // this.validate,
+      // this.pwd,
+      // this.cfmpwd,
       this.showText,
       this.isMobileNumberField,
       required this.pwdField,
@@ -46,8 +56,31 @@ class _CustomInputState extends State<CustomInput> {
         onFieldSubmitted: widget.onSubmit,
         focusNode: widget.focusNode,
         obscureText: widget.pwdField ? true : false,
+        // validator: (value) {
+        //   if (widget.fieldType == "password") {
+        //     if (value!.isEmpty || value == null) {
+        //       print("Enter Password");
+        //     }
+        //     return null;
+        //   }
+        //   if (widget.fieldType == "email") {
+        //     if (value!.isEmpty || value == null) {
+        //       print("Enter Email");
+        //     } else if (!value.contains('@')) {
+        //       print("Please enter valid Email");
+        //     }
+        //     return null;
+        //   }
+        //   if (widget.fieldType == "confirm password") {
+        //     if (value!.isEmpty || value == null) {
+        //       print('Enter Password to confirm');
+        //     }
+        //     return null;
+        //   }
+        // },
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(12.0),
+
           focusedBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
           hintText: widget.showText ?? "hint text",

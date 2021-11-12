@@ -57,8 +57,17 @@ class _HomeSState extends State<HomeS> {
               ),
               CategoryWidget(
                 categoryRef: 'Romantic',
+                navigate: "Romantic",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
               ),
               Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
                 child: Text(
                   'Crime',
                   style: TextStyle(
@@ -69,7 +78,176 @@ class _HomeSState extends State<HomeS> {
               ),
               CategoryWidget(
                 categoryRef: 'Crime',
-              )
+                navigate: "Crime",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
+                child: Text(
+                  'Autobiography',
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              CategoryWidget(
+                categoryRef: 'Autobiography',
+                navigate: "Autobiography",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
+                child: Text(
+                  'Fictional',
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              CategoryWidget(
+                categoryRef: 'Fictional',
+                navigate: "Fictional",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
+                child: Text(
+                  'Historical',
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              CategoryWidget(
+                categoryRef: 'Historical',
+                navigate: "Historical",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
+                child: Text(
+                  'Mythological',
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              CategoryWidget(
+                categoryRef: 'Mythological',
+                navigate: "Mythological",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
+                child: Text(
+                  'New Releases',
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              CategoryWidget(
+                categoryRef: 'NewReleases',
+                navigate: "NewReleases",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
+                child: Text(
+                  'Popular Authors',
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              CategoryWidget(
+                categoryRef: 'PopularAuthors',
+                navigate: "PopularAuthors",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
+                child: Text(
+                  'Political',
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              CategoryWidget(
+                categoryRef: 'Political',
+                navigate: "Political",
+              ),
+              Divider(
+                color: Colors.grey.withOpacity(0.3),
+                thickness: 2.0,
+                endIndent: 20.0,
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                  top: 10.0,
+                ),
+                child: Text(
+                  'Bestsellers',
+                  style: TextStyle(
+                    fontSize: 19.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              CategoryWidget(
+                categoryRef: 'Bestseller',
+                navigate: "Bestseller",
+              ),
             ],
           ),
           Positioned(

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:shopsy/screens/autobiography.dart';
 import 'package:shopsy/screens/bestsellers.dart';
 import 'package:shopsy/screens/crime.dart';
 import 'package:shopsy/screens/fictional.dart';
 import 'package:shopsy/screens/historical.dart';
 import 'package:shopsy/screens/mythological.dart';
+import 'package:shopsy/screens/new_releases.dart';
+import 'package:shopsy/screens/political.dart';
 import 'package:shopsy/screens/popular_authors.dart';
 import 'package:shopsy/screens/romantic.dart';
 
@@ -18,8 +21,11 @@ class CustomType extends StatefulWidget {
     "Fictional",
     "Mythological",
     "Historical",
+    "Autobiography",
+    "Political",
+    "New Releases",
     "Popular Authors",
-    "BestSellers"
+    "BestSellers",
   ];
 
   CustomType({
@@ -111,11 +117,38 @@ class _CustomTypeState extends State<CustomType> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PopularAuthors(),
+                        builder: (context) => Autobiography(),
                       ),
                     );
                   }
                   if (selected == 6) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Political(),
+                      ),
+                    );
+                  }
+
+                  if (selected == 7) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NewReleases(),
+                      ),
+                    );
+                  }
+
+                  if (selected == 8) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PopularAuthors(),
+                      ),
+                    );
+                  }
+
+                  if (selected == 9) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
