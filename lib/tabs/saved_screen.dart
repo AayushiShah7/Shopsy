@@ -33,6 +33,19 @@ class _SavedScreenState extends State<SavedScreen> {
         .delete();
   }
 
+  Future _addToCart(var productId, var categoryRef) async {
+    await _userRef.doc(_user!.uid).collection("Cart").doc(productId).set({
+      "coverType": _userDetails.typeOfCover,
+      "productid": productId,
+      "categoryRef": categoryRef,
+    });
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Book added to the Cart'),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     User? _user = FirebaseAuth.instance.currentUser;
@@ -201,7 +214,7 @@ class _SavedScreenState extends State<SavedScreen> {
                                                         left: 5.0,
                                                         // top: 5.0,
                                                       ),
-                                                      // color: Colors.white,
+                                                      color: Colors.red,
                                                       height: 30.0,
                                                       width: 250.0,
                                                       child: Text(
@@ -216,29 +229,44 @@ class _SavedScreenState extends State<SavedScreen> {
                                                         ),
                                                       ),
                                                     ),
-                                                    Container(
-                                                      margin: EdgeInsets.only(
-                                                        right: 10.0,
-                                                        left: 5.0,
-                                                        // top: 5.0,
-                                                      ),
-                                                      height: 30.0,
-                                                      width: 250.0,
-                                                      // color: Colors.white,
-                                                      child: Text(
-                                                        "Rs. ${_productMap['price']}",
-                                                        maxLines: 2,
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        style: TextStyle(
-                                                            color: Theme.of(
-                                                                    context)
-                                                                .primaryColor,
-                                                            fontSize: 20.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w700),
-                                                      ),
+                                                    Row(
+                                                      children: [
+                                                        Container(
+                                                          margin:
+                                                              EdgeInsets.only(
+                                                            right: 10.0,
+                                                            left: 5.0,
+                                                            // top: 5.0,
+                                                          ),
+                                                          // color: Colors.white,
+                                                          child: Text(
+                                                            "Rs. ${_productMap['price']}",
+                                                            maxLines: 2,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            style: TextStyle(
+                                                                color: Theme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                fontSize: 20.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w700),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          child: ElevatedButton(
+                                                            onPressed: () {
+                                                              _addToCart(
+                                                                  document.id,
+                                                                  _documentBookmarkData[
+                                                                      'categoryRef']);
+                                                            },
+                                                            child: Text('Add'),
+                                                          ),
+                                                        )
+                                                      ],
                                                     ),
                                                   ],
                                                 ),

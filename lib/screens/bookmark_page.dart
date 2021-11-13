@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_field
 
+import 'dart:ui';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +42,19 @@ class _BookmarkPageState extends State<BookmarkPage> {
         .collection("Bookmark")
         .doc(productId)
         .delete();
+  }
+
+  Future _addToCart(var productId, var categoryRef) async {
+    await _userRef.doc(_user!.uid).collection("Cart").doc(productId).set({
+      "coverType": _userDetails.typeOfCover,
+      "productid": productId,
+      "categoryRef": categoryRef,
+    });
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Book added to the Cart'),
+      ),
+    );
   }
 
   @override
@@ -216,28 +231,55 @@ class _BookmarkPageState extends State<BookmarkPage> {
                                                       ),
                                                     ),
                                                   ),
-                                                  Container(
-                                                    margin: EdgeInsets.only(
-                                                      right: 10.0,
-                                                      left: 5.0,
-                                                      // top: 5.0,
-                                                    ),
-                                                    height: 30.0,
-                                                    width: 250.0,
-                                                    // color: Colors.white,
-                                                    child: Text(
-                                                      "Rs. ${_productMap['price']}",
-                                                      maxLines: 2,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      style: TextStyle(
-                                                          color:
-                                                              Theme.of(context)
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Container(
+                                                        margin: EdgeInsets.only(
+                                                          right: 10.0,
+                                                          left: 5.0,
+                                                          // top: 5.0,
+                                                        ),
+                                                        height: 30.0,
+
+                                                        // color: Colors.white,
+                                                        child: Text(
+                                                          "Rs. ${_productMap['price']}",
+                                                          maxLines: 2,
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          style: TextStyle(
+                                                              color: Theme.of(
+                                                                      context)
                                                                   .primaryColor,
-                                                          fontSize: 20.0,
-                                                          fontWeight:
-                                                              FontWeight.w700),
-                                                    ),
+                                                              fontSize: 20.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w700),
+                                                        ),
+                                                      ),
+                                                      Container(
+                                                        margin: EdgeInsets.only(
+                                                          right: 15.0,
+                                                        ),
+                                                        child: ElevatedButton(
+                                                          onPressed: () {
+                                                            _addToCart(
+                                                                document.id,
+                                                                _documentBookmarkData[
+                                                                    'categoryRef']);
+                                                          },
+                                                          child: Text(
+                                                            'Add to Cart',
+                                                            style: TextStyle(
+                                                              fontSize: 15.0,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
                                                   ),
                                                 ],
                                               ),

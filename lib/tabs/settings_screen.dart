@@ -303,7 +303,7 @@ class SettingsScreen extends StatelessWidget {
                 ),
               );
             },
-            hasBackGround: false,
+            hasBackGround: true,
             hasEditAction: true,
             title: "Settings",
             hasTitle: true,

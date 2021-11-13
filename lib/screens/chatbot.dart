@@ -19,15 +19,20 @@ class _ChatBotState extends State<ChatBot> {
   List<Map> messages = [];
 
   void sendQuery(String query) async {
-    print(query);
-    var url = Uri.parse('http://192.168.25.129/cgi-bin/shopsy.py?q=${query}');
-    var response = await http.post(url);
-    print('Response status code ${response.statusCode}');
-    print('Response body ${response.body}');
+    try{
+      print(query);
+      var url = Uri.parse('http://192.168.25.129/cgi-bin/shopsy.py?q=${query}');
+      var response = await http.post(url);
+      print('Response status code ${response.statusCode}');
+      print('Response body ${response.body}');
 
-    setState(() {
-      messages.insert(0, {"data": 0, "message": response.body.toString()});
-    });
+      setState(() {
+        messages.insert(0, {"data": 0, "message": response.body.toString()});
+      });
+    }catch(e){
+      print(e);
+    }
+
   }
 
   @override

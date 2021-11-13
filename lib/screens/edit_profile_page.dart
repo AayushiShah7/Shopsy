@@ -221,14 +221,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 focusNode: _mobileNumberfocusNode,
                 isMobileNumberField: true,
                 onChange: (value) {
-                  if (value == "") {
+                  if (value != "") {
                     _editMobileNumber = int.parse(value);
                   } else {
                     _editMobileNumber = widget.mobileNumber;
                   }
                 },
                 onSubmit: (value) {
-                  if (_editMobileNumber == "" || _editAge == null) {
+                  if (_editMobileNumber == "" || _editMobileNumber == null) {
                     _editMobileNumber = widget.mobileNumber!;
                   } else {
                     _editMobileNumber = int.parse(value);
@@ -246,15 +246,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 onChange: (value) {
                   if (value != "") {
                     _editEmail = value;
+                    // _emailFieldController.text = value;
                   } else {
                     _editEmail = widget.email!;
+                    // _emailFieldController.text = widget.email!;
                   }
                 },
                 onSubmit: (value) {
-                  if (_editEmail == "") {
+                  if (_editEmail == "" || _editEmail == null) {
                     _editEmail = widget.email!;
+                    // _emailFieldController.text = widget.email!;
                   } else {
                     _editEmail = value;
+                    // _emailFieldController.text = value;
                   }
                   // print('hey ${_editFirstName}');
                   // print('hey ${_editLastName}');
